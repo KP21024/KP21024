@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'jost, sans-serif';
+}
+body {
+    background: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.card{
+    width: 350px;
+    height: 430px;
+    perspective: 1500px;
+}
+#chk{
+    display: none;
+
+}
+#chk:checked ~ .content{
+    animation: 2s animate;
+    /*transform: rotateY(180deg);*/
+}
+.content{
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transition: transfom 1s cubic-bezier(0.75, 0,0.85,1);
+    border-radius: 8px;
+}
+.front, back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: #fff;
+    backface-visibility: hidden;
+    transform-style: 1500px;
+    border-radius: 8px;
+}
+.back{
+    transform: rotateY(180deg);
+}
+.inner{
+    height: 100%;
+    padding: 1.5em;
+    tranform: translateZ(80px) scale(1);
+}
